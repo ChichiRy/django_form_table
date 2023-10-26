@@ -1,0 +1,132 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+    <style>
+        .activated{
+            color: red;
+        }
+        .contact{
+            height: 400px;
+            width: 400px;
+            background-image: url("{% static 'images/CA.png' %}");
+            background-repeat: no-repeat;
+        }
+        .divider-text {
+            position: relative;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .divider-text span {
+            padding: 7px;
+            font-size: 12px;
+            position: relative;
+            z-index: 2;
+        }
+        .divider-text:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            top: 55%;
+            left: 0;
+            z-index: 1;
+        }
+        .btn-facebook {
+            background-color: #405D9D;
+            color: #fff;
+        }
+        .btn-twitter {
+            background-color: #42AEEC;
+            color: #fff;
+        }
+        h1{
+            font-size: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        table{
+            width:100%;
+            table-layout: fixed;
+        }
+        .tbl-header{
+            background-color: rgba(255,255,255,0.3);
+        }
+        .tbl-content{
+            height:300px;
+            overflow-x:auto;
+            margin-top: 0px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        th{
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        td{
+            padding: 15px;
+            text-align: left;
+            vertical-align:middle;
+            font-weight: 300;
+            font-size: 12px;
+            color: #fff;
+            border-bottom: solid 1px rgba(255,255,255,0.1);
+        }
+        section{
+            margin: 50px;
+        }
+        /* for custom scrollbar for webkit browser*/
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+    </style>
+
+</head>
+<body>
+
+<a class="{% if navbar == 'home' %} activated {% endif %}" href="{% url 'newapp:home' %}">Home</a>
+<a class="{% if navbar == 'contact' %} activated {% endif %}" href="{% url 'newapp:contact' %}">Contact</a>
+<a class="{% if navbar == 'about' %} activated {% endif %}" href="{% url 'newapp:about' %}">About</a>
+<a class="{% if navbar == 'add' %} activated {% endif %}" href="{% url 'newapp:add' %}">Add Data</a>
+<a class="{% if navbar == 'viewdata' %} activated {% endif %}" href="{% url 'newapp:viewdata' %}">View Data</a>
+
+
+{% block body %}
+
+{% endblock %}
+
+<footer>
+    <a href="">crafted by you</a>
+</footer>
+
+
+
+</body>
+</html>
